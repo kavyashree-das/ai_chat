@@ -1,0 +1,6 @@
+{
+  "name": "AI_chat",
+  "description": "A comprehensive chat application with a Spring Boot Java backend, React frontend, and PostgreSQL database integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
