@@ -26,11 +26,12 @@ export default function App() {
 
   const fetchMessages = async () => {
     try {
-      const response = await fetch("/api/messages");
+        const response = await fetch("https://chat-backend-1-2wer.onrender.com/api/message");
+      //const response = await fetch("/api/messages");
      // const response = await fetch("http://localhost:8080/api/messages"); // for local setup
       const data = await response.json();
       setMessages(data);
-    } catch (error) {
+    } catch (error) {R
       console.error("Failed to fetch messages:", error);
     } finally {
       setLoading(false);
@@ -43,7 +44,8 @@ export default function App() {
     if (file) formData.append("file", file);
 
     try {
-        const response = await fetch("/api/message", {
+         const response = await fetch("https://chat-backend-1-2wer.onrender.com/api/message", {
+      //  const response = await fetch("/api/message", {
         //const response = await fetch("http://localhost:8080/api/message", { //for local setup
         method: "POST",
         body: formData,
@@ -57,8 +59,9 @@ export default function App() {
 
   const handleReset = async () => {
     try {
-      await fetch("/api/reset", { method: "POST" });
-      await fetch("http://localhost:8080/api/reset", { method: "POST" }); //for local setup
+      await fetch("https://chat-backend-1-2wer.onrender.com/api/reset", { method: "POST" });
+      //      await fetch("/api/reset", { method: "POST" });
+      //await fetch("http://localhost:8080/api/reset", { method: "POST" }); //for local setup
       setMessages([]);
     } catch (error) {
       console.error("Failed to reset:", error);
